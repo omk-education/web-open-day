@@ -50,7 +50,7 @@ body {
 .ground {
   --left: 0;
   position: absolute;
-  width: 300%;
+  width: 500%;
   bottom: 0;
   left: calc(var(--left) * 1%);
 }
@@ -105,5 +105,22 @@ body {
 
   100% {
     top: 30%;
+  }
+}
+
+/* анимация движения земли */
+.slide {
+  animation: slide 8s linear infinite;
+}
+
+/* движение земли */
+@keyframes slide {
+  0% {
+    transform: translate(0);
+  }
+
+  100% {
+    /* ширина изображения */
+    transform: translate(-4798px);
   }
 }

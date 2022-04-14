@@ -2,6 +2,7 @@
 
 const dino = document.querySelector('.dino');
 const cactus = document.querySelector('.cactus');
+const ground = document.querySelector('.ground');
 const score = document.querySelector('.score');
 const startScreen = document.querySelector('.start-screen');
 let point;
@@ -9,18 +10,26 @@ let scoringPoints;
 let isAlive;
 
 // однократно обрабатываем нажатие клавиш для старта игры
-document.addEventListener('keydown', startGame, { once: true });
+document.addEventListener('click', startGame, { once: true });
 
-// старт игры
+/**
+ * Старт игры
+ *
+ * @return {undefined}
+ */
 function startGame() {
   // обнуляем очки
   point = 0;
   // скрываем началную надпись
   startScreen.hidden = true;
-  // запускаем анимацию
+  // запускаем анимацию кактуса
   cactus.classList.add('motion');
+  // запускаем анимацию земли
+  ground.classList.add('slide');
+  // меняем изображение на бегущего динозвра
+  dino.src = 'images/dino-run.gif';
   // начинаем обрабатывать прыжок динозавра
-  document.addEventListener('keydown', jump);
+  document.addEventListener('click', jump);
   // цикл для подсчета очков
   scoringPoints = setInterval(() => {
     score.innerHTML = point++;
@@ -47,20 +56,28 @@ function startGame() {
   }, 10);
 }
 
-// окончание игры
+/**
+ * Окончание игры
+ *
+ * @return {undefined}
+ */
 function gameOver() {
   // останавливам подсчет очков
   clearInterval(scoringPoints);
   // останавливаем обработчик столкновений
   clearInterval(isAlive);
-  // alert('Игра окончена!');
+  // отладочная информация
   console.log('Игра окончена!');
   // останавливаем кактус
   cactus.classList.remove('motion');
+  // останавливаем землю
+  ground.classList.remove('slide');
+  // меняем изображение на стоящего динозвра
+  dino.src = 'images/dino-stationary.png';
   // показываем надпись для повторной игры
   startScreen.hidden = false;
   // ожидаем нажатие клавиши для старта новой игры
-  document.addEventListener('keydown', startGame, { once: true });
+  document.addEventListener('click', startGame, { once: true });
 }
 
 // прыжок динозавра
