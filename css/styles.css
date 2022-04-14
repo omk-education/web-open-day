@@ -7,12 +7,15 @@
 }
 
 body {
+  font-family: sans-serif;
+}
+
+#game {
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  font-family: sans-serif;
 }
 
 /* игровой мир */
@@ -90,7 +93,7 @@ body {
 
 /* прыжок динозвра */
 .jump {
-  animation: jump 0.4s linear;
+  animation: jump 0.4s cubic-bezier(0.25, 0.1, 0.1, 1.0);
 }
 
 /*  анимация прыжка  */

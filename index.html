@@ -4,22 +4,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dino Game</title>
+  <title>Dino Game by OMK</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <script src="js/main.js" defer></script>
 </head>
 
 <body>
-  <div class="world" data-world>
-    <div class="score" data-score>0</div>
-    <div class="start-screen" data-start-screen>
-      Нажмите любую клавишу,<br>
-      чтобы начать играть
+  <div class="container">
+    <img src="images/omk-logo.svg" class="mt-3" alt="Логотип ГБПОУ
+          Республики Марий Эл «ОМК им. И.К. Глушкова»">
+
+    <div class="card text-dark bg-light mb-3 mt-3">
+
+      <h4 class="card-header p-3">
+        09.02.07 Информационные системы и программирование
+      </h4>
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <h5><strong>Квалификация</strong>: Разработчик веб и мультимедийных приложений</h5>
+
+        <p>Разработчики веб и мультимедийных приложений сочетают в своей работе дизайнерские и технические знания для
+          проведения анализа, проектирования, разработки и тестирования веб-приложений и информационных систем. В своей
+          работе они используют различные средства графической обработки информации, языки разметки и программирования.
+        </p>
+        <p>Объектами профессиональной деятельности являются:</p>
+        <ul>
+          <li>Разработка дизайна веб-приложений</li>
+          <li>Проектирование, разработка и оптимизация веб-приложений</li>
+          <li>Проектирование и разработка информационных систем</li>
+        </ul>
+      </div>
+      <div class="card-footer text-center">
+        <a class="btn btn-outline-primary" href="https://omk12.ru/entrant/entrants/">
+          Больше о специальности можно узнать на нашем сайте ...
+        </a>
+      </div>
     </div>
 
-    <img src="images/ground.png" class="ground " data-ground>
-    <img src="images/dino-stationary.png" class="dino" data-dino>
-    <img src="images/cactus.png" class="cactus" data-cactus>
+    <div class="card text-dark bg-light mb-3 mt-3">
+      <div id="game" class="game">
+        <div class="world" data-world>
+          <div class="score" data-score>0</div>
+          <div class="start-screen" data-start-screen>
+            Кликните,<br>
+            чтобы начать играть
+          </div>
+
+          <img src="images/ground.png" class="ground " data-ground>
+          <img src="images/dino-stationary.png" class="dino" data-dino>
+          <img src="images/cactus.png" class="cactus" data-cactus>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://github.com/omk-education/web-open-day" class="btn btn-secondary mb-3">
+      Исходный код игры можно посмотреть здесь ...
+    </a>
+
   </div>
 </body>
 
